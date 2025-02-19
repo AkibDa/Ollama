@@ -3,7 +3,7 @@ import ollama
 client = ollama.Client()
 
 model = "llama2"
-prompt = "What is Python?"
+prompt = input("Enter your prompt here: ")
 
 response = client.generate(model=model, prompt=prompt)
 

@@ -1,5 +1,5 @@
 FROM llama2
-
+/bye
 PARAMETER temperature 1
 
 SYSTEM """
