@@ -1,9 +1,17 @@
 from transformers import pipeline
-# import torch
+from langchain_huggingface import HuggingFacePipeline
+from langchain.prompts import PromptTemplate
 
-# print(torch.cuda.is_available())
-# print(torch.cuda.get_device_name(0))
+model = pipeline(task="text-generation",
+                 model="mistralai/Mistral-7B-Instruct-v0.2",
+                 max_length = 256,
+                 truncation=True,
+                 )
 
-model = pipeline(task="summarization", model="facebook/bart-large-cnn")
-reponse = model("text to summarize")
-print(reponse)
+llm = HuggingFacePipeline(pipeline=model)
+
+template = PromptTemplate.from_template("Explain {topic} in detail for a {age} year old.")
+
+chain = template | llm
+topic = input("Topic: ")
+age = input("Age: ")
