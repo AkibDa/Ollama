@@ -15,3 +15,6 @@ template = PromptTemplate.from_template("Explain {topic} in detail for a {age} y
 chain = template | llm
 topic = input("Topic: ")
 age = input("Age: ")
+
+response = chain.invoke({"topic": topic, "age": age})
+print(response)
