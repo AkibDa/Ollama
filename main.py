@@ -10,7 +10,7 @@ model = pipeline(task="text-generation",
 
 llm = HuggingFacePipeline(pipeline=model)
 
-template = PromptTemplate.from_template("Explain {topic} in detail for a {age} year old.")
+template = PromptTemplate.from_template("Explain {topic} in detail for a {age} year old to understand.")
 
 chain = template | llm
 topic = input("Topic: ")
