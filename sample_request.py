@@ -4,7 +4,7 @@ import json
 url = "http://localhost:11434/api/chat"
 
 payload = {
-    "model": "llama2",  
+    "model": "llama3.2",  
     "messages": [{"role": "user", "content": "What is Python?"}]
 }
 

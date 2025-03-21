@@ -2,7 +2,7 @@ import ollama
 
 client = ollama.Client()
 
-model = "llama2"
+model = "llama3.2"
 
 while(True):
   
